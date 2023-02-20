@@ -10,6 +10,10 @@ jobs:
       - run: yarn install
       # daemon mode has bug on circleCI
       - run: cd android && chmod +x gradlew && ./gradlew --no-daemon bundleRelease assembleRelease
+
+      # FASTLANE commands
+      # - run: gem install fastlane -NV
+
       - run: cd android/app/build/outputs/apk/release && ls && pwd
       - store_artifacts:
           path: android/app/build/outputs/bundle/release
