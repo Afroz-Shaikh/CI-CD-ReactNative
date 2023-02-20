@@ -12,7 +12,8 @@ jobs:
       - run: cd android && chmod +x gradlew && ./gradlew --no-daemon bundleRelease assembleRelease
 
       # FASTLANE commands
-      # - run: gem install fastlane -NV
+      - run: gem install fastlane -NV
+      - run: cd android && fastlane build_release_apk
 
       - run: cd android/app/build/outputs/apk/release && ls && pwd
       - store_artifacts:
