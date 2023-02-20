@@ -9,7 +9,7 @@ const MyApp = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text> Testing Fastlane config with CIrcleCi 🎉</Text>
+      <Text>Fastlane is WORKING ON CIRCLECI 🎉</Text>
     </View>
   );
 };
