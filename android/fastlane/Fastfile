@@ -14,11 +14,11 @@
 # update_fastlane
 
 # fastlane_require 'firebase_app_distribution'
-fastlane_reqire 'dotenv'
+# fastlane_reqire 'dotenv'
 
-before_all do
-  Dotenv.overload(".env")
-end
+# before_all do
+#   Dotenv.overload(".env")
+# end
 
 default_platform(:android)
 
