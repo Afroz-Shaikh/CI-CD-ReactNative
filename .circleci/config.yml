@@ -22,6 +22,7 @@ jobs:
             curl -sL firebase.tools | bash
       # - run:
       #     command: fastlane add_plugin firebase_app_distribution
+      - run: 'rvm install 2.2.5 && rvm use 2.2.5'
       - run:
           name: 'Deploy alpha build to Firebase'
           command: |
