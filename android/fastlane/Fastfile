@@ -33,8 +33,8 @@ platform :android do
     release = firebase_app_distribution(
             app: "#{env:app_id}",
             groups: "GA",
-            release_notes: "Lots of amazing new features to test out!"
-            apk_path: "android/app/build/outputs/apk/release/app-release.apk"
+            release_notes: "Lots of amazing new features to test out!",
+            apk_path: "android/app/build/outputs/apk/release/app-release.apk",
             firebase_cli_token: "#{env:firebase_token}"
         )
   end
