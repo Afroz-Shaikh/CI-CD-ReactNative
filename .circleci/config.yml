@@ -25,6 +25,10 @@ jobs:
       # - run: 'rvm install 2.2.5 && rvm use 2.2.5'
       # - run:
       - run:
+          name: Install missing gems
+          command: bundle install --path vendor/bundle --jobs 4 --retry 3
+
+      - run:
           name: Deploy build to Firebase App Distribution
           command: cd android && bundle exec fastlane deploy_firebase
 
