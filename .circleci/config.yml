@@ -23,10 +23,10 @@ jobs:
       # - run:
       #     command: fastlane add_plugin firebase_app_distribution
       # - run: 'rvm install 2.2.5 && rvm use 2.2.5'
+      # - run:
       - run:
-          name: 'Deploy  build to Firebase'
-          command: |
-            bundle exec fastlane deploy_firebase
+          name: Deploy build to Firebase App Distribution
+          command: cd android && bundle exec fastlane deploy_firebase
 
       - run: cd android/app/build/outputs/apk/release && ls && pwd
       - store_artifacts:
