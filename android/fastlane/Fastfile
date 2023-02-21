@@ -37,6 +37,9 @@ platform :android do
 
   desc "Deploy to Firebase App Distribution"
   lane :deploy_firebase do
+    gradle(
+    task: "cd android  && clean assembleRelease"
+  )
     firebase_app_distribution(
             build_release_apk,
             app: "ENV['firebase_app_id']",

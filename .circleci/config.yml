@@ -27,7 +27,7 @@ jobs:
 
       - run:
           name: Deploy build to Firebase App Distribution
-          command: cd android && fastlane deploy_firebase
+          command: cd android && fastlane deploy_firebase env:development
 
       - run: cd android/app/build/outputs/apk/release && ls && pwd
       - store_artifacts:
