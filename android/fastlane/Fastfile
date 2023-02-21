@@ -13,6 +13,13 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+fastlane_require 'firebase_app_distribution'
+fastlane_reqire 'dotenv'
+
+before_all do
+  Dotenv.overload(".env")
+end
+
 default_platform(:android)
 
 platform :android do
@@ -30,13 +37,13 @@ platform :android do
 
   desc "Deploy to Firebase App Distribution"
   lane :deploy_firebase do
-    release = firebase_app_distribution(
+    firebase_app_distribution(
             build_release_apk,
-            app: "#{env:app_id}",
+            app: "ENV['firebase_app_id']",
             groups: "GA",
             release_notes: "Lots of amazing new features to test out!",
             apk_path: "android/app/build/outputs/apk/release/app-release.apk",
-            firebase_cli_token: "#{env:firebase_token}"
+            firebase_cli_token: "ENV['firebase_token']"
         )
   end
 end
