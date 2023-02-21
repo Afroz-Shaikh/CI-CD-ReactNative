@@ -20,8 +20,8 @@ jobs:
           name: 'Install Firebase CLI'
           command: |
             curl -sL firebase.tools | bash
-      - run:
-          command: fastlane add_plugin firebase_app_distribution
+      # - run:
+      #     command: fastlane add_plugin firebase_app_distribution
       - run:
           name: 'Deploy alpha build to Firebase'
           command: |
