@@ -21,6 +21,8 @@ jobs:
           command: |
             curl -sL firebase.tools | bash
       - run:
+          command: fastlane add_plugin firebase_app_distribution
+      - run:
           name: 'Deploy alpha build to Firebase'
           command: |
             bundle exec fastlane stage flavor:alpha branch:${CIRCLE_BRANCH} app_id:$FIREBASE_APP_ID_ALPHA firebase_token:$FIREBASE_TOKEN
