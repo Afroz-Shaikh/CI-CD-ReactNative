@@ -28,7 +28,7 @@ platform :android do
     gradle(task: "bundleRelease")
   end
 
-  desc: "Deploy to Firebase App Distribution"
+  desc "Deploy to Firebase App Distribution"
   lane :deploy_firebase do
     release = firebase_app_distribution(
             app: "#{env:app_id}",
