@@ -22,11 +22,11 @@ jobs:
             curl -sL firebase.tools | bash
       # - run:
       #     command: fastlane add_plugin firebase_app_distribution
-      - run: 'rvm install 2.2.5 && rvm use 2.2.5'
+      # - run: 'rvm install 2.2.5 && rvm use 2.2.5'
       - run:
-          name: 'Deploy alpha build to Firebase'
+          name: 'Deploy  build to Firebase'
           command: |
-            bundle exec fastlane stage flavor:alpha branch:${CIRCLE_BRANCH} app_id:$FIREBASE_APP_ID_ALPHA firebase_token:$FIREBASE_TOKEN
+            bundle exec fastlane deploy_firebase
 
       - run: cd android/app/build/outputs/apk/release && ls && pwd
       - store_artifacts:
