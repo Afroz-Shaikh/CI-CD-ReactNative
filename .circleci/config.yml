@@ -11,6 +11,27 @@ jobs:
       # daemon mode has bug on circleCI
       # - run: cd android && chmod +x gradlew && ./gradlew --no-daemon bundleRelease assembleRelease
 
+      # Install Ruby Version Manager (RVM)
+      - run:
+          name: Install RVM
+          command: |
+            gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+            \curl -sSL https://get.rvm.io | bash -s stable --ruby
+            source /home/circleci/.rvm/scripts/rvm
+
+      # Set Ruby version using RVM
+      - run:
+          name: Set Ruby version
+          command: rvm use 2.7.6
+
+      # Install necessary gems
+      - run:
+          name: Install gems
+          command: |
+            gem update --system
+            gem install bundler -v 2.2.15
+            bundle install --path vendor/bundle --jobs 4 --retry 3
+
       # FASTLANE commands
       - run: gem install fastlane -NV
       - run: cd android && fastlane build_release_apk
@@ -20,13 +41,9 @@ jobs:
           name: 'Install Firebase CLI'
           command: |
             curl -sL firebase.tools | bash
-      - run:
-          name: Install missing gems
-          command: |
-            rvm install 2.7.6
-            rvm use 2.7.6
-            bundle install --path vendor/bundle --jobs 4 --retry 3
-
+      # - run:
+      #     command: fastlane add_plugin firebase_app_distribution
+      # - run:
       - run:
           name: Deploy build to Firebase App Distribution
           command: cd android && bundle exec fastlane deploy_firebase
