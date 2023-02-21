@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "569059068743",
+    "project_id": "ci-cdreactnative",
+    "storage_bucket": "ci-cdreactnative.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569059068743:android:4c75560d9eddc984fa9a62",
+        "android_client_info": {
+          "package_name": "com.ci_cd_reactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569059068743-pbrdstmnqu9gste297igiv8leqkr8jte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQbOdjYdKRW3flGiVEP6XxWEUpMdjc5EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569059068743-pbrdstmnqu9gste297igiv8leqkr8jte.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
