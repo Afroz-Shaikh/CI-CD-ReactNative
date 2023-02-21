@@ -31,11 +31,11 @@ platform :android do
   desc: "Deploy to Firebase App Distribution"
   lane :deploy_firebase do
     release = firebase_app_distribution(
-            app: "#{env:[:app_id]}",
+            app: "#{env:app_id}",
             groups: "GA",
             release_notes: "Lots of amazing new features to test out!"
             apk_path: "android/app/build/outputs/apk/release/app-release.apk"
-            firebase_cli_token: "#{env:[:firebase_token	]}"
+            firebase_cli_token: "#{env:firebase_token}"
         )
   end
 end
