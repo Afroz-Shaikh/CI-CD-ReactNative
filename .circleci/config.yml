@@ -15,6 +15,16 @@ jobs:
       - run: gem install fastlane -NV
       - run: cd android && fastlane build_release_apk
 
+      # Firebase commands
+      - run:
+          name: 'Install Firebase CLI'
+          command: |
+            curl -sL firebase.tools | bash
+      - run:
+          name: 'Deploy alpha build to Firebase'
+          command: |
+            bundle exec fastlane stage flavor:alpha branch:${CIRCLE_BRANCH} app_id:$FIREBASE_APP_ID_ALPHA firebase_token:$FIREBASE_TOKEN
+
       - run: cd android/app/build/outputs/apk/release && ls && pwd
       - store_artifacts:
           path: android/app/build/outputs/bundle/release
