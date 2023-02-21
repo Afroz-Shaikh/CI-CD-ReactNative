@@ -37,5 +37,6 @@ platform :android do
             apk_path: "android/app/build/outputs/apk/release/app-release.apk"
             firebase_cli_token: "#{env:[:firebase_token	]}"
         )
+  end
 end
 
