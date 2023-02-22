@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
   },
   text: {
     maxWidth: '80%',
+    color: 'black',
   },
   trailing: {
     width: 12,
