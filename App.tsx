@@ -14,7 +14,7 @@ const MyApp = () => {
           alignItems: 'center',
           backgroundColor: 'blue',
         }}>
-        <Text>Version 2.1</Text>
+        <Text style={{fontSize: 24, fontWeight: 'bold'}}>Version 2.1</Text>
         <Text>- Circle CI ✅</Text>
         <Text>- Fastlane ✅</Text>
         <Text>- Firebase Distribution ⏳</Text>
