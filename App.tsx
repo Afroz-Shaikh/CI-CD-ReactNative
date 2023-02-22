@@ -1,16 +1,20 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View, Text} from 'react-native';
+import {Appbar} from 'react-native-paper';
 
 const MyApp = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text>Fastlane is WORKING ON CIRCLECI 🎉</Text>
-    </View>
+    <>
+      <Appbar.Header>
+        <Appbar.Content title="Mobile Pipeline Test" />
+      </Appbar.Header>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Version 2.1</Text>
+        <Text>- Circle CI ✅</Text>
+        <Text>- Fastlane ✅</Text>
+        <Text>- Firebase Distribution ⛔️</Text>
+      </View>
+    </>
   );
 };
 
