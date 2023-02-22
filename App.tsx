@@ -1,26 +1,47 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import Tile from './components/tile';
 
 const MyApp = () => {
   return (
-    <>
-      {/* <Appbar>
-        <Appbar.Content title="Mobile Pipeline Test" />
-      </Appbar> */}
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'blue',
-        }}>
-        <Text style={{fontSize: 24, fontWeight: 'bold'}}>Version 2.1</Text>
-        <Text>- Circle CI ✅</Text>
-        <Text>- Fastlane ✅</Text>
-        <Text>- Firebase Distribution ⏳</Text>
+    <View style={styles.background}>
+      <View style={styles.titleWrapper}>
+        <Text style={styles.title}>CI CD MOBILE</Text>
       </View>
-    </>
+
+      <View style={styles.items}>
+        <Tile text={'Circle CI integration'} />
+        <Tile text={'Config.yml CircleCI'} />
+        <Tile text={'FastLane integration'} />
+        <Tile text={'FastLane config'} />
+        <Tile text={'Fastlane app build generation'} />
+        <Tile text={'Fastlane app build upload'} />
+        <Tile text={'Firebase  Distribution'} />
+      </View>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    backgroundColor: '#e8eaed',
+  },
+
+  titleWrapper: {
+    // backgroundColor: '#e8eaed',
+    paddingTop: 80,
+
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  items: {
+    paddingHorizontal: 20,
+    paddingTop: 20,
+  },
+});
 
 export default MyApp;

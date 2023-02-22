@@ -37,6 +37,7 @@ platform :android do
 
   desc "Deploy to Firebase App Distribution"
   lane :deploy_firebase do
+    increment_version_code
     gradle(
         task: 'assemble',
         build_type: 'Release'
