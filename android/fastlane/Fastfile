@@ -44,11 +44,11 @@ platform :android do
 
     firebase_app_distribution(
             # app: "ENV['firebase_app_id']",
-            app: "1:569059068743:android:4c75560d9eddc984fa9a62",
+            app: ENV['app_id'],
             groups: "GA",
             release_notes: "Lots of amazing new features to test out!",
             apk_path: "app/build/outputs/apk/release/app-release.apk",
-            firebase_cli_token: "1//0gge2ApFIuRxYCgYIARAAGBASNwF-L9Ir9TNgOOxm2iQU43LOJeQavToTQ2oLZ_-YYfsWV-L4GbMNNSy1FJAXhhrzlk5xEK_5a_c"
+            firebase_cli_token: ENV['firebase_token']
         )
   end
 end
