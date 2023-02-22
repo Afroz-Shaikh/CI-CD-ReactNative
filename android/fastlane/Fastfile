@@ -38,15 +38,17 @@ platform :android do
   desc "Deploy to Firebase App Distribution"
   lane :deploy_firebase do
     gradle(
-    task: "cd android  && clean assembleRelease"
-  )
+        task: 'assemble',
+        build_type: 'Release'
+    )
+
     firebase_app_distribution(
-            build_release_apk,
-            app: "ENV['firebase_app_id']",
+            # app: "ENV['firebase_app_id']",
+            app: "1:569059068743:android:4c75560d9eddc984fa9a62",
             groups: "GA",
             release_notes: "Lots of amazing new features to test out!",
-            apk_path: "android/app/build/outputs/apk/release/app-release.apk",
-            firebase_cli_token: "ENV['firebase_token']"
+            apk_path: "app/build/outputs/apk/release/app-release.apk",
+            firebase_cli_token: "1//0gge2ApFIuRxYCgYIARAAGBASNwF-L9Ir9TNgOOxm2iQU43LOJeQavToTQ2oLZ_-YYfsWV-L4GbMNNSy1FJAXhhrzlk5xEK_5a_c"
         )
   end
 end

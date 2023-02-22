@@ -31,6 +31,14 @@ Builds the APK for release
 
 Builds the AAB for release
 
+### android deploy_firebase
+
+```sh
+[bundle exec] fastlane android deploy_firebase
+```
+
+Deploy to Firebase App Distribution
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
