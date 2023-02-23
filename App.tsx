@@ -112,11 +112,11 @@ workflows:
       <Modal visible={modalVisible} animationType={'slide'}>
         <View style={styles.modal}>
           <TouchableOpacity onPress={() => setModalVisible(false)}>
-            <Text style={styles.modalTitle}>Modal Title</Text>
+            <Text style={styles.modalTitle}>Description </Text>
           </TouchableOpacity>
 
           <ScrollView style={styles.modalScrollView}>
-            <Markdown style={styles.modalText}>{ktext}</Markdown>
+            <Markdown style={styles.textk}>{ktext}</Markdown>
           </ScrollView>
         </View>
         <TouchableOpacity
@@ -148,23 +148,33 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 20,
   },
+  textk: {
+    color: 'red',
+  },
   modal: {
-    backgroundColor: '#fff',
+    // backgroundColor: 'darkgrey',
+    // color: '#000',
     borderRadius: 10,
-    marginHorizontal: 20,
+    marginHorizontal: 0,
     height: '100%',
     marginTop: 80,
+    marginh: 20,
+    marginVertical: 20,
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingVertical: 20,
   },
   modalScrollView: {
+    color: 'blue',
+
     flex: 1,
     paddingHorizontal: 20,
     height: '100%',
   },
   modalBackground: {
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
+    backgroundColor: 'darkgrey',
     position: 'absolute',
+    color: 'blue',
 
     left: 0,
     bottom: 0,
@@ -172,10 +182,12 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     fontSize: 20,
+    color: 'black',
     fontWeight: 'bold',
     marginBottom: 10,
   },
   modalText: {
+    color: 'red',
     // fontSize: 16,
   },
 });
